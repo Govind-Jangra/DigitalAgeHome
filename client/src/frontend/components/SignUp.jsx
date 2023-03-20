@@ -41,7 +41,7 @@ const navigate = useNavigate();
     try {
       
      
-      const response = await axios.post('http://localhost:4000/auth/register', formData);
+      const response = await axios.post('/auth/register', formData);
       setGlobalState("id",formData.email);
       // setId(formData.email);
       console.log(formData.email);

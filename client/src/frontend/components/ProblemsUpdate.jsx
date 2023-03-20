@@ -43,7 +43,7 @@ const isAuth = localStorage.getItem('isAuth');
       const [financescale, setfinancescale] = useState(0)
       const [financedesc, setfinancedesc] = useState('')
       const handleCountChange = (category, count) => {
-        axios.post('http://localhost:4000/api/update-count', {
+        axios.post('/api/update-count', {
           category,
           count
         })
@@ -65,7 +65,7 @@ const isAuth = localStorage.getItem('isAuth');
         console.log(foodscale);
         console.log(fooddesc);
         toast.success("problems added successfully");
-        axios.put(`http://localhost:4000/api/submitfood/${id}`, { food: foodscale, fooddesc: fooddesc })
+        axios.put(`/api/submitfood/${id}`, { food: foodscale, fooddesc: fooddesc })
     .then(response => {
       console.log(response.data);
     })
@@ -82,7 +82,7 @@ const isAuth = localStorage.getItem('isAuth');
         console.log(waterscale);
         console.log(waterdesc);
         toast.success("problems added successfully");
-        axios.put(`http://localhost:4000/api/submitwater/${id}`, { water: waterscale, waterdesc: waterdesc })
+        axios.put(`/api/submitwater/${id}`, { water: waterscale, waterdesc: waterdesc })
     .then(response => {
       console.log(response.data);
     })
@@ -99,7 +99,7 @@ const isAuth = localStorage.getItem('isAuth');
         console.log(financescale);
         console.log(financedesc);
         toast.success("problems added successfully");
-        axios.put(`http://localhost:4000/api/submitfinance/${id}`, { finance: financescale, financedesc: financedesc })
+        axios.put(`/api/submitfinance/${id}`, { finance: financescale, financedesc: financedesc })
     .then(response => {
       console.log(response.data);
     })
@@ -139,7 +139,7 @@ const isAuth = localStorage.getItem('isAuth');
     }
     
     useEffect(() => {
-        axios.get('http://localhost:4000/api/problem-counts')
+        axios.get('/api/problem-counts')
           .then(res => {
             setCounts(res.data);
           })

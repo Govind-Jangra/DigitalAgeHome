@@ -42,7 +42,7 @@ function SignIn() {
   const handleSubmit = async (formData) => {
     try {
       console.log(formData);
-      const response = await axios.post('http://localhost:4000/auth/login', formData);
+      const response = await axios.post('/auth/login', formData);
       toast.success("Details added successfully");
      
       localStorage.setItem('id', formData.phone);
