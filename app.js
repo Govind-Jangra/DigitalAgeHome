@@ -30,12 +30,14 @@ app.get("*", function (_, res) {
   );
 });
 
+
+
 app.post("/auth/register", register);
 app.use("/auth", authRoutes);
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
-const port = process.env.PORT || "4000";
-const dburl=process.env.dbUrl||"mongodb://localhost:27017";
+const port = process.env.PORT ;
+const dburl=process.env.dbUrl
 connectDB(dburl);
 // app.set("view engine","ejs");
 app.use(express.urlencoded({extended:true}))
