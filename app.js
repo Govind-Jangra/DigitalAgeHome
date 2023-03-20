@@ -20,10 +20,10 @@ app.use(express.json());
 //     next();
 // });
 
-app.use(express.static(path.join(__dirname, "/client/dist")));
+app.use(express.static(path.join(__dirname, "/client/build")));
 app.get("*", function (_, res) {
   res.sendFile(
-    path.join(__dirname, "/client/dist/index.html"),
+    path.join(__dirname, "/client/build/index.html"),
     function (err) {
       res.status(500).send(err);
     }
